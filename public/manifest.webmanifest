@@ -1,0 +1,10 @@
+{
+  "name": "Sujata Pokhrel — Graphic & UI/UX Designer",
+  "short_name": "Sujata Pokhrel — Graphic & UI/UX Designer",
+  "description": "Portfolio of Sujata Pokhrel, graphic designer, UI/UX designer and Flutter developer from Butwal, Nepal.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6efe2",
+  "theme_color": "#f6efe2",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

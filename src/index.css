@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+  --font-marker: "Caveat", cursive;
+  --font-pixel: "Press Start 2P", system-ui, sans-serif;
+  --color-canvas: oklch(0.96 0.015 75);
+  --color-ink: oklch(0.17 0.02 30);
+  --color-accent: oklch(0.34 0.13 25);
+  --color-paper: oklch(0.99 0.01 70);
+}
+
+html,
+body {
+  @apply bg-canvas text-ink font-body antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: contain;
+}
+
+.reveal {
+  transform: translateY(0) scale(1) rotate(var(--reveal-rot, 0deg));
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal:not(.is-visible) {
+  transform: translateY(44px) scale(0.96) rotate(var(--reveal-rot, 0deg));
+}
+
+.film-strip {
+  background-color: var(--color-accent);
+  position: relative;
+}
+.film-strip::before,
+.film-strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-image: radial-gradient(circle, var(--color-canvas) 5px, transparent 5.5px);
+  background-size: 34px 28px;
+  background-repeat: repeat-x;
+  background-position: 10px center;
+}
+.film-strip::before {
+  top: 0;
+}
+.film-strip::after {
+  bottom: 0;
+}
+
+.paper-note {
+  background: var(--color-paper);
+  box-shadow: 0 10px 24px -8px oklch(0.17 0.02 30 / 0.35), 0 2px 6px oklch(0.17 0.02 30 / 0.15);
+}
+
+.tape {
+  position: absolute;
+  height: 26px;
+  width: 90px;
+  background: repeating-linear-gradient(
+    45deg,
+    oklch(0.88 0.03 75 / 0.8),
+    oklch(0.88 0.03 75 / 0.8) 6px,
+    oklch(0.83 0.03 75 / 0.7) 6px,
+    oklch(0.83 0.03 75 / 0.7) 12px
+  );
+  box-shadow: 0 1px 3px oklch(0.17 0.02 30 / 0.3);
+  opacity: 0.92;
+}
+
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(oklch(0.99 0 0 / 0.5) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+
+.corkboard {
+  background-color: var(--color-accent);
+  background-image: radial-gradient(oklch(0.17 0.02 30 / 0.18) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+.torn-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 92%, 96% 96%, 91% 92%, 86% 97%, 81% 93%, 76% 98%, 71% 92%,
+    66% 96%, 61% 91%, 56% 97%, 51% 93%, 46% 98%, 41% 92%, 36% 96%, 31% 91%, 26% 97%,
+    21% 93%, 16% 98%, 11% 92%, 6% 96%, 0% 92%
+  );
+}
+
+.stamp-circle {
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px oklch(0.17 0.02 30 / 0.35);
+}
+
+.star-sticker {
+  filter: drop-shadow(0 3px 6px oklch(0.17 0.02 30 / 0.35));
+}
+
+.ribbon {
+  position: relative;
+  background: var(--color-accent);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+}
+
+@keyframes intro-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.intro-marquee {
+  animation: intro-marquee 30s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-marquee {
+    animation: none;
+  }
+}
+
+@keyframes tool-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.tool-track {
+  animation: tool-scroll 40s linear infinite;
+}
+.tool-reverse {
+  animation-direction: reverse;
+}
+.tool-mask:hover .tool-track {
+  animation-play-state: paused;
+}
+.tool-mask {
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-track {
+    animation: none;
+  }
+}

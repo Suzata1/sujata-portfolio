@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "website",
+  "slug": "portfolio-website-template-scrapbook-graphic-designer-portfolio",
+  "title": "Portfolio Website Template - Scrapbook Graphic Designer Portfolio",
+  "summary": "Bold deep-red scrapbook-style one-page portfolio for a graphic designer (Maya Ortiz) with a spiral-notebook dotted top edge, cream paper cards, a red halftone portrait and handmade collage details. Includes a scrolling marquee of disciplines, a 'table of contents' page-jump menu, About Me with focus tags, Skills (hard skills, soft skills, tool icons), an Experience timeline, a Collection of Art gallery with a client testimonial, a UI Design showcase and a 'say hello' contact ending. Fully phone responsive.",
+  "category": "Portfolio",
+  "prompt": "Create a one-page graphic designer portfolio laid out like a handmade scrapbook, in a bold deep red theme with cream paper cards, condensed bold headings and handwritten accents. Add a spiral-notebook dotted border along the top and a nav with About, Skills, Experience, Projects, Design, Contact. Hero: a large red halftone portrait on cream paper, the name 'MAYA ORTIZ', the subtitle 'Graphic Designer - Brand, Editorial, Packaging' and a View the Work button, followed by a scrolling marquee (Branding, Editorial, Packaging, Art Direction, Typography). Include a 'table of contents' card linking to each section, an About Me page with focus tags, a Skills page with hard skills, soft skills and tool badges (Ai, Ps, Id, Fg, Ae, Pr), an Experience timeline with three roles, a Collection of Art gallery (Branding, Packaging, Editorial) with a testimonial quote, a Design section showing mobile and web UI screens, and a 'the end / say hello' contact page with email. Use taped, layered collage styling, smooth scroll animations, working buttons and a fully phone responsive layout.",
+  "brief": "site",
+  "min_plan": "free",
+  "thumbnail": "preview/slide-01.webp",
+  "demo_url": "https://portfolio-showcase.site.orvisai.com/"
+}
